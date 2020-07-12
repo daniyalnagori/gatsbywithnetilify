@@ -6,5 +6,42 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata : {
+    name: "daniyal",
+    age: 24,
+    address: "defence",
+  },
   plugins: [],
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
