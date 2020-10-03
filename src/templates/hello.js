@@ -8,6 +8,7 @@ const studentTemplate = ({pageContext: {data}}) => {
         <Layout>
             <section style={{display:'flex',justifyContent:'center',flexFlow:'column',alignItems:'center'}}>
            {/* <h2>{data}</h2> */}
+           
            <div>{documentToReactComponents(data?.detail?.json)}</div>
             </section>
         </Layout>
