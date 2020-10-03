@@ -5,6 +5,7 @@ export default function Home() {
   let [state, updateState] = useState({
     name: ""
   })
+  const { name } = state;
   useEffect(() => {
     fetch('/.netlify/functions/hello-world',{
       method: 'POST',
@@ -22,7 +23,6 @@ export default function Home() {
         })
       })
   }, [name])
-  const { name } = state;
   return <div>
     <Layout>
       <h1>
