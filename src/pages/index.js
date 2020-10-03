@@ -1,17 +1,35 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Layout from "../components/Layout";
 
 export default function Home() {
-  return <div>      
-      <Layout>
-          <h1>
-          Hello PIAIC!
+  let [state, updateState] = useState({
+    name: ""
+  })
+  useEffect(() => {
+    fetch('/.netlify/functions/hello-world',{
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({name:"hello world===="})
+    })
+      .then(res => res.text())
+      .then(text => {
+        console.log(text,'========')
+        updateState({
+          name: text
+        })
+      })
+  }, [name])
+  const { name } = state;
+  return <div>
+    <Layout>
+      <h1>
+        {name}
           </h1>
-          <p>
-          hello worldssssssssssssssssssssssssssssssssssssssssssss
-          </p>
-          <p>azizzzzzzzzzzzzzzzz</p>
-      </Layout>
+  
+    </Layout>
 
   </div>
 }
